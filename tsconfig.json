@@ -1,4 +1,17 @@
 {
+  "compilerOptions": {
+    "jsx": "react", // Set the JSX option to 'react'
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es6",
+    "types": ["jest", "node"]
+  },
+  "include": ["src"],
   "files": [],
   "references": [
     {

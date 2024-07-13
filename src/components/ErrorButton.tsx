@@ -1,5 +1,7 @@
+// src/components/ErrorButton.tsx
 import { Component } from 'react';
-
+import './styles.css';
+import React = require('react');
 
 class ErrorButton extends Component {
   throwError = () => {
@@ -7,7 +9,11 @@ class ErrorButton extends Component {
   };
 
   render() {
-    return <button onClick={this.throwError} className="error-button">Throw Error</button>;
+    return (
+      <button onClick={this.throwError} className="error-button">
+        Throw Error
+      </button>
+    );
   }
 }
 

@@ -1,24 +1,21 @@
-import { Component } from 'react';
-import { Product } from '../interface/interfaces';
+import * as React from 'react';
+import { Link } from 'react-router-dom';
 
-interface Props {
-  items: Product[];
+interface ResultsProps {
+  items: Array<{ id: number; title: string; description: string }>;
 }
 
-class Results extends Component<Props> {
-  render() {
-    return (
-      <ul className="results-list">
-        {this.props.items.map((item) => (
-          <li key={item.id} className="results-item">
-            <h2 className="results-title">{item.title}</h2>
-            <p className="results-description">{item.description}</p>
-            <img src={item.thumbnail} alt="" />
-          </li>
-        ))}
-      </ul>
-    );
-  }
-}
+const Results = ({ items }: ResultsProps) => {
+  return (
+    <ul>
+      {items.map((item) => (
+        <li key={item.id}>
+          <Link to={`/details/${item.id}`}>{item.title}</Link>
+          <p>{item.description}</p>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default Results;
